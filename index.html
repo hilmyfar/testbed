@@ -107,12 +107,31 @@
     <script src="js/L.Control.AccordionLegend.js"></script>
 
     <!-- Replace with the actual path to your GeoJSON data -->
-    <script src="data/halte1.js"></script>
-    <script src="data/halte2.js"></script>
-    <script src="data/halte3.js"></script>
-    <script src="data/koridor1.js"></script>
-    <script src="data/koridor2.js"></script>
-    <script src="data/koridor3.js"></script>
+    <script src="data/transjatim/halte1.js"></script>
+    <script src="data/transjatim/halte2.js"></script>
+    <script src="data/transjatim/halte3.js"></script>
+    <script src="data/transjatim/halte_rencana.js"></script>
+    <script src="data/transjatim/koridor1.js"></script>
+    <script src="data/transjatim/koridor2.js"></script>
+    <script src="data/transjatim/koridor3.js"></script>
+    <script src="data/transjatim/koridor4.js"></script>
+    <script src="data/transjatim/koridor5.js"></script>
+    <script src="data/sb_ts/Lin/Lin1.js"></script>
+    <script src="data/sb_ts/Lin/Lin2.js"></script>
+    <script src="data/sb_ts/Lin/Lin3.js"></script>
+    <script src="data/sb_ts/Lin/Lin4.js"></script>
+    <script src="data/sb_ts/feeder.js"></script>
+    <script src="data/sb_ts/damri.js"></script>
+    <script src="data/sb_ts/brt.js"></script>
+    <script src="data/train/srrl.js"></script>
+    <script src="data/train/mrt.js"></script>
+    <script src="data/sb_ts/haltesb.js"></script>
+    <script src="data/admin.js"></script>
+    <script src="data/jaringan/statusjalanx.js"></script>
+    <script src="data/jaringan/eksisting.js"></script>
+    <script src="data/jaringan/rencana.js"></script>
+    <script src="data/infrastruktur/simpul_eks.js"></script>
+    <script src="data/infrastruktur/simpul_ren.js"></script>
 
     <script>
       // Standard leaflet map setup
@@ -126,7 +145,7 @@
               title: "Google Maps",
               layer: new L.tileLayer("https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
                 attribution: "Tiles &copy; Google &mdash; Source: Google",
-              }).addTo(map),
+              }),
               opacityslider: false,
               legend: [],
             },
@@ -136,15 +155,206 @@
                 maxZoom: 20,
                 subdomains: ["mt0", "mt1", "mt2", "mt3"],
                 attribution: "Tiles &copy; Google &mdash; Source: Google",
-              }),
+              }).addTo(map),
               opacityslider: false,
               legend: [],
             },
+            {
+              title: "Batas Administrasi",
+              layer: L.geoJson(admin, {
+                style: function polystyle(feature) {
+                  return {
+                    fillColor: "grey",
+                    weight: 1,
+                    opacity: 0.5,
+                    color: "white",
+                    fillOpacity: 0.2,
+                  };
+                },
+                onEachFeature: function (feature, layer) {
+                  layer
+                    .bindPopup(feature.properties.WADMKK)
+                    .bindTooltip(feature.properties.WADMKK, { permanent: true, direction: "center", className: "cuslabel" });
+                },
+                attribution: "",
+                maxZoom: 15,
+                zIndex: 1000,
+              }).addTo(map),
+              legend: [
+                { type: "line", color: "#ffffff", text: "Batas Kab/Kota" },
+                { type: "square", color: "grey", text: "Wilayah Kab/Kota" },
+              ],
+            },
           ],
         },
-        
         {
-          title: "Rute/Koridor Transportasi",
+          title: "Jaringan Transportasi",
+          layers: [
+          {
+              title: "Jaringan Eksisting",
+              layer: L.geoJson(eksisting, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 1 // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "red", text: "Arteri Primer" },
+                        { type: "line", color: "pink", text: "Kolektor Primer" },
+                        { type: "line", color: "magenta", text: "Jalan Tol" },
+                        { type: "line", color: "yellow", text: "Rel Kereta Api" }
+                      ],
+            },
+            {
+              title: "Jaringan Rencana",
+              layer: L.geoJson(rencana, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "red", text: "Arteri Primer" },
+                        { type: "line", color: "pink", text: "Kolektor Primer" },
+                        { type: "line", color: "magenta", text: "Jalan Tol" },
+                        { type: "line", color: "yellow", text: "Rel Kereta Api" }
+                      ],
+            },
+            {
+              title: "Status Jalan",
+              layer: L.geoJson(statusjalan, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "blue", text: "Jalan Nasional" },
+                        { type: "line", color: "aqua", text: "Jalan Provinsi" },
+                      ],
+            },
+          ],
+        },
+        {
+          title: "Infrastruktur Transportasi",
+          layers: [
+          {
+              title: "Simpul Transportasi Eksisting",
+              layer: L.geoJson(simpul_eks, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = feature.properties.Fungsi;
+
+                  var smallIcon = L.icon({
+                    iconSize: [20, 20],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Objek +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' +
+                    feature.properties.Fungsi +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+              }),
+              legend: [
+                { type: "image", url: "/icon/Bandar Udara Khusus.png", text: "Bandar Udara Khusus" },
+                { type: "image", url: "/icon/Bandar Udara Pengumpan.png", text: "Bandar Udara Pengumpan" },
+                { type: "image", url: "/icon/Bandar Udara Pengumpul.png", text: "Bandar Udara Pengumpul" },
+                { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
+                { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
+                { type: "image", url: "/icon/Pelabuhan Penyebrangan.png", text: "Pelabuhan Penyebrangan" },
+                { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" },
+                { type: "image", url: "/icon/Terminal Penumpang Tipe A.png", text: "Terminal Penumpang Tipe A" },
+                { type: "image", url: "/icon/Terminal Penumpang Tipe B.png", text: "Terminal Penumpang Tipe B" },
+                { type: "image", url: "/icon/Stasiun Kereta Api", text: "Stasiun Kereta Api" },
+              ],
+            },
+            {
+              title: "Simpul Transportasi Rencana",
+              layer: L.geoJson(simpul_ren, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = feature.properties.Fungsi;
+
+                  var smallIcon = L.icon({
+                    iconSize: [20, 20],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Objek +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' +
+                    feature.properties.Fungsi +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+              }),
+              legend: [
+                { type: "image", url: "/icon/Bandar Udara Khusus.png", text: "Bandar Udara Khusus" },
+                { type: "image", url: "/icon/Bandar Udara Pengumpan.png", text: "Bandar Udara Pengumpan" },
+                { type: "image", url: "/icon/Bandar Udara Pengumpul.png", text: "Bandar Udara Pengumpul" },
+                { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
+                { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
+                { type: "image", url: "/icon/Pelabuhan Penyebrangan.png", text: "Pelabuhan Penyebrangan" },
+                { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" },
+                { type: "image", url: "/icon/Terminal Penumpang Tipe A.png", text: "Terminal Penumpang Tipe A" },
+                { type: "image", url: "/icon/Terminal Penumpang Tipe B.png", text: "Terminal Penumpang Tipe B" },
+                { type: "image", url: "/icon/Stasiun Kereta Api", text: "Stasiun Kereta Api" },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Rute TransJatim",
           layers: [
             {
               title: "Koridor 1 Gresik-Sidoarjo via Surabaya",
@@ -197,11 +407,45 @@
               opacityslider: false,
               legend: [{ type: "line", color: "green", text: "" }],
             },
+            {
+              title: "Koridor 4 Lamongan-Gresik",
+              layer: L.geoJson(koridor4, {
+                style: function (feature) {
+                  return {
+                    color: "blue", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "blue", text: "" }],
+            },
+            {
+              title: "Koridor 5 Surabaya-Bangkalan",
+              layer: L.geoJson(koridor5, {
+                style: function (feature) {
+                  return {
+                    color: "purple", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "purple", text: "" }],
+            },
           ],
         },
         
         {
-          title: "Halte/Stops",
+          title: "Halte TransJatim",
           layers: [
           {
               title: "Halte Koridor 1",
@@ -225,9 +469,7 @@
                     '<div class="image-popup">' +
                     '<img src="image_survey/' +
                     feature.properties.idi +
-                    '.jpg" alt="' +
-                    feature.properties.Nama +
-                    '" style="width: 100%; height: auto;" />' +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
                     "</div>" +
                     '<div class="desk-popup">' +
                     feature.properties.Desc_ +
@@ -265,9 +507,7 @@
                     '<div class="image-popup">' +
                     '<img src="image_survey/' +
                     feature.properties.idi +
-                    '.jpg" alt="' +
-                    feature.properties.Nama +
-                    '" style="width: 100%; height: auto;" />' +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
                     "</div>" +
                     '<div class="desk-popup">' +
                     feature.properties.Desc_ +
@@ -305,9 +545,7 @@
                     '<div class="image-popup">' +
                     '<img src="image_survey/' +
                     feature.properties.idi +
-                    '.jpg" alt="' +
-                    feature.properties.Nama +
-                    '" style="width: 100%; height: auto;" />' +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
                     "</div>" +
                     '<div class="desk-popup">' +
                     feature.properties.Desc_ +
@@ -323,12 +561,269 @@
               ],
               opacityslider: false,
             },
+            {
+              title: "Halte Koridor Rencana (4)",
+              layer: L.geoJson(halte_rencana, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = "halte";
+
+                  var smallIcon = L.icon({
+                    iconSize: [23, 23],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Halte +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' +
+                    feature.properties.Nama_Jalan +
+                    "</div>"+
+                    '<div class="desk-popup">' +
+                    feature.properties.Keterangan +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+              }),
+              legend: [
+                { type: "image", url: "icon/halte.png", text: "" }
+              ],
+              opacityslider: false,
+            },
           ]
-        }
+        },
+        {
+          title: "Bus dan Feeder Surabaya",
+          layers: [
+          {
+              title: "Halte Bus dan Feeder Surabaya",
+              layer: L.geoJson(haltesb, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = "haltegrey";
+
+                  var smallIcon = L.icon({
+                    iconSize: [12, 12],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Halte +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' +
+                    feature.properties.RUTE +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+              }),
+              legend: [
+                { type: "image", url: "icon/haltegrey.png", text: "" }
+              ],
+              opacityslider: false,
+            },  
+          {
+              title: "SB R1/R2 Purabaya-Rajawali",
+              layer: L.geoJson(Lin1, {
+                style: function (feature) {
+                  return {
+                    color: "red", // You can change the color as needed
+                    weight: 2, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "red", text: "" }],
+            },
+            {
+              title: "TS TB-II Lidah Wetan-Kejawan PT",
+              layer: L.geoJson(Lin2, {
+                style: function (feature) {
+                  return {
+                    color: "yellow", // You can change the color as needed
+                    weight: 2, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "yellow", text: "" }],
+            },
+            {
+              title: "TS K3L MERR",
+              layer: L.geoJson(Lin3, {
+                style: function (feature) {
+                  return {
+                    color: "green", // You can change the color as needed
+                    weight: 2, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "green", text: "" }],
+            },
+            {
+              title: "SB R7/R8 TIJ Joyoboyo-PTC Lenmark",
+              layer: L.geoJson(Lin4, {
+                style: function (feature) {
+                  return {
+                    color: "blue", // You can change the color as needed
+                    weight: 2, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "blue", text: "" }],
+            },
+            {
+              title: "Feeder Wira-Wiri",
+              layer: L.geoJson(feeder, {
+                style: function (feature) {
+                  return {
+                    color: "orange", // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "orange", text: "" }],
+            },
+            {
+              title: "Bus Kota Damri",
+              layer: L.geoJson(damri, {
+                style: function (feature) {
+                  return {
+                    color: "purple", // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [{ type: "line", color: "purple", text: "" }],
+            },
+            {
+              title: "Rencana BRT Greater Surabaya",
+              layer: L.geoJson(brt, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "pink", text: "Lin 1" },
+                        { type: "line", color: "aquamarine", text: "Lin 2" }
+                      ],
+            },
+          ],
+        },
+        {
+          title: "Transportasi Berbasis Rel",
+          layers: [
+            {
+              title: "Surabaya Regional Railway Line",
+              layer: L.geoJson(srrl, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 3.5, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "blue", text: "Sidoarjo - Tarik (Link Line)" },
+                        { type: "line", color: "magenta", text: "Kandangan - Indro (Indro Branch)" },
+                        { type: "line", color: "green", text: "S. Pasar Turi - S. Gubeng (City Line)" },
+                        { type: "line", color: "red", text: "S. Gubeng - Sidoarjo (Sidoarjo Line)" },
+                        { type: "line", color: "orange", text: "Wonokromo - Mojokerto (Mojokerto Line)" },
+                        { type: "line", color: "cyan", text: "Lamongan - S. Pasar Turi (Lamongan Line)" },
+                        { type: "line", color: "yellow", text: "Waru - Juanda Airport (Ultimate Network)" },
+                      ],
+            },
+            {
+              title: "Mass Rapid Transit",
+              layer: L.geoJson(mrt, {
+                style: function (feature) {
+                  return {
+                    color: feature.properties.color, // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "red", text: "Line Timur-Barat" },
+                        { type: "line", color: "blue", text: "Line Utara-Selatan" },
+                      ],
+            },
+          ],
+        },
+        
       ];
 
       // Add the scale control to the map
-      L.control.scale().addTo(map);
+      // L.control.scale().addTo(map);
 
       // Create the sidebar instance and add it to the map
       var sidebar = L.control.sidebar({ container: "sidebar", autopan: true }).addTo(map).open("home");
