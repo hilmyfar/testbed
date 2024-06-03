@@ -50,7 +50,23 @@
         border: 2px none rgba(0, 0, 0, 0.2);
         background-clip: padding-box;
       }
+
+      .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+      .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
     </style>
+    
+    
   </head>
   <body>
     <!-- optionally define the sidebar content via HTML markup -->
@@ -76,29 +92,95 @@
       </div>
 
       <!-- panel content -->
-      <div class="leaflet-sidebar-content">
-        <div class="leaflet-sidebar-pane" id="home">
+    <div class="leaflet-sidebar-content">
+      <div class="leaflet-sidebar-pane" id="home">
           <h1 class="leaflet-sidebar-header">
-            WebGIS Transportasi Jatim
-            <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
+              WebGIS Transportasi Jatim
+              <span class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></span>
           </h1>
           <br />
           <img
-            src="image\logo_jatim.png"
-            alt="logo dishub jatim"
-            style="width: 100%; max-width: 250px; height: auto; padding-bottom: 0"
-            ;
+              src="image/logo_jatim.png"
+              alt="logo dishub jatim"
+              style="width: 100%; max-width: 250px; height: auto; padding-bottom: 0;"
           />
-          <p style="font-style: normal; font-weight: bold">
-            Selamat datang di laman WebGIS Integrasi Transportasi Publik Provinsi Jawa Timur
-          </p> 
-        
-        </div>
-
-        <div class="leaflet-sidebar-pane" id="layers">
-          <span id="layer-control-container"></span>
-        </div>
+          <p style="font-style: normal; font-weight: bold;">
+              Selamat datang di laman WebGIS Integrasi Transportasi Publik Provinsi Jawa Timur
+          </p>
+          <div class="button-container">
+              <button onclick="openImageSlider('set1')" style="grid-column: 1 / span 3;">Rencana Aksi</button>
+              <button onclick="openImageSlider('set2')" style="grid-column: 1 / span 3;">Kelola Metropolitan Terpadu</button>
+              <button onclick="openImageSlider('set3')" style="grid-column: 1 / span 3;">Jalanan Tenang dan Aman</button>
+              <button onclick="openImageSlider('set4')" style="grid-column: 1 / span 3;">Mobilitas Layak Huni dan Mudah Diakses</button>
+              <button onclick="openImageSlider('set5')" style="grid-column: 1 / span 3;">Angkutan Umum  Modern Terintegrasi</button>
+          </div>
       </div>
+
+      <div class="leaflet-sidebar-pane" id="layers">
+          <span id="layer-control-container"></span>
+      </div>
+  </div>
+
+  <!-- Image Slider -->
+  <div id="imageSlider" class="popup" style="display: none;">
+      <div class="popup-content">
+          <span class="popup-close" onclick="closeImageSlider()">&times;</span>
+          <h2>Rencana Aksi SUMP+</h2>
+          <div id="imageContainer">
+              <button onclick="prevImage()" style="position: absolute; top: 50%; left: 0;">&lt;</button>
+              <button onclick="nextImage()" style="position: absolute; top: 50%; right: 0;">&gt;</button>
+              <img id="sliderImage" src="" alt="Slider Image" style="display: block; margin: auto;">
+          </div>
+      </div>
+  </div>
+
+  <script>
+      let currentImageIndex = 0;
+      let currentImageSet = [];
+      const imageSets = {
+          set1: ['image/rencana/Rencana Aksi_Page_01.png'], 
+          set2: ['image/rencana/Rencana Aksi_Page_02.png', 'image/rencana/Rencana Aksi_Page_03.png', 'image/rencana/Rencana Aksi_Page_04.png', 'image/rencana/Rencana Aksi_Page_05.png'],
+          set3: ['image/rencana/Rencana Aksi_Page_06.png', 'image/rencana/Rencana Aksi_Page_07.png', 'image/rencana/Rencana Aksi_Page_08.png', 'image/rencana/Rencana Aksi_Page_09.png', 'image/rencana/Rencana Aksi_Page_10.png', 'image/rencana/Rencana Aksi_Page_11.png', 'image/rencana/Rencana Aksi_Page_12.png'],
+          set4: ['image/rencana/Rencana Aksi_Page_13.png', 'image/rencana/Rencana Aksi_Page_14.png', 'image/rencana/Rencana Aksi_Page_15.png', 'image/rencana/Rencana Aksi_Page_16.png', 'image/rencana/Rencana Aksi_Page_17.png', 'image/rencana/Rencana Aksi_Page_18.png', 'image/rencana/Rencana Aksi_Page_19.png'],
+          set5: ['image/rencana/Rencana Aksi_Page_20.png', 'image/rencana/Rencana Aksi_Page_21.png', 'image/rencana/Rencana Aksi_Page_22.png', 'image/rencana/Rencana Aksi_Page_23.png', 'image/rencana/Rencana Aksi_Page_24.png', 'image/rencana/Rencana Aksi_Page_25.png', 'image/rencana/Rencana Aksi_Page_26.png']
+      };
+
+      function openImageSlider(set) {
+          currentImageSet = imageSets[set];
+          currentImageIndex = 0;
+          showCurrentImage();
+          document.getElementById('imageSlider').style.display = 'flex';
+          document.addEventListener('keydown', handleKeyPress);
+      }
+
+      function closeImageSlider() {
+          document.getElementById('imageSlider').style.display = 'none';
+          document.removeEventListener('keydown', handleKeyPress);
+      }
+
+      function handleKeyPress(event) {
+          if (event.key === 'ArrowLeft') {
+              prevImage();
+          } else if (event.key === 'ArrowRight') {
+              nextImage();
+          }
+      }
+
+      function prevImage() {
+          currentImageIndex = (currentImageIndex - 1 + currentImageSet.length) % currentImageSet.length;
+          showCurrentImage();
+      }
+
+      function nextImage() {
+          currentImageIndex = (currentImageIndex + 1) % currentImageSet.length;
+          showCurrentImage();
+      }
+
+      function showCurrentImage() {
+          const imageElement = document.getElementById('sliderImage');
+          imageElement.src = currentImageSet[currentImageIndex];
+      }
+  </script>
     </div>
 
     <div id="map" class="sidebar-map"></div>
