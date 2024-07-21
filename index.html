@@ -227,7 +227,7 @@
               title: "Google Maps",
               layer: new L.tileLayer("https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
                 attribution: "Tiles &copy; Google &mdash; Source: Google",
-              }),
+              }).addTo(map),
               opacityslider: false,
               legend: [],
             },
@@ -237,7 +237,7 @@
                 maxZoom: 20,
                 subdomains: ["mt0", "mt1", "mt2", "mt3"],
                 attribution: "Tiles &copy; Google &mdash; Source: Google",
-              }).addTo(map),
+              }),
               opacityslider: false,
               legend: [],
             },
@@ -248,15 +248,15 @@
                   return {
                     fillColor: "grey",
                     weight: 1,
-                    opacity: 0.5,
-                    color: "white",
-                    fillOpacity: 0.2,
+                    opacity: 1,
+                    color: "grey",
+                    fillOpacity: 0.3,
                   };
                 },
                 onEachFeature: function (feature, layer) {
                   layer
-                    .bindPopup(feature.properties.WADMKK)
-                    .bindTooltip(feature.properties.WADMKK, { permanent: true, direction: "center", className: "cuslabel" });
+                    //.bindPopup(feature.properties.WADMKK)
+                    //.bindTooltip(feature.properties.WADMKK, { permanent: true, direction: "center", color: "grey", className: "cuslabel" });
                 },
                 attribution: "",
                 maxZoom: 15,
@@ -278,9 +278,29 @@
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
-                    weight: 1 // Adjust the line weight as needed
+                    weight: 1.5 // Adjust the line weight as needed
                   };
-                },
+                }, onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Ruas +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
+                    feature.properties.Fungsi +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                    },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
@@ -293,6 +313,7 @@
                         { type: "line", color: "magenta", text: "Jalan Tol" },
                         { type: "line", color: "yellow", text: "Rel Kereta Api" }
                       ],
+                      
             },
             {
               title: "Jaringan Rencana",
@@ -300,9 +321,29 @@
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
-                    weight: 1, // Adjust the line weight as needed
+                    weight: 2, // Adjust the line weight as needed
                   };
-                },
+                }, onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Ruas +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
+                    feature.properties.Fungsi +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                    },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
