@@ -211,9 +211,16 @@
     <script src="data/admin.js"></script>
     <script src="data/jaringan/statusjalanx.js"></script>
     <script src="data/jaringan/eksisting.js"></script>
+    <script src="data/jaringan/rel_eksisting.js"></script>
     <script src="data/jaringan/rencana.js"></script>
+    <script src="data/jaringan/rel_rencana.js"></script>
     <script src="data/infrastruktur/simpul_eks.js"></script>
+    <script src="data/infrastruktur/bandara_eks.js"></script>
+    <script src="data/infrastruktur/pelabuhan_eks.js"></script>
+    <script src="data/infrastruktur/terminal_eks.js"></script>
+    <script src="data/infrastruktur/stasiun_eks.js"></script>
     <script src="data/infrastruktur/simpul_ren.js"></script>
+    <script src="data/infrastruktur/pelabuhan_ren.js"></script>
 
     <script>
       // Standard leaflet map setup
@@ -263,7 +270,7 @@
                 zIndex: 1000,
               }).addTo(map),
               legend: [
-                { type: "line", color: "#ffffff", text: "Batas Kab/Kota" },
+                { type: "line", color: "grey", text: "Batas Kab/Kota" },
                 { type: "square", color: "grey", text: "Wilayah Kab/Kota" },
               ],
             },
@@ -273,12 +280,12 @@
           title: "Jaringan Transportasi",
           layers: [
           {
-              title: "Jaringan Eksisting",
+              title: "Jaringan Jalan Eksisting",
               layer: L.geoJson(eksisting, {
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
-                    weight: 1.5 // Adjust the line weight as needed
+                    weight: 2 // Adjust the line weight as needed
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
@@ -308,20 +315,59 @@
               }),
               opacityslider: false,
               legend: [
-                        { type: "line", color: "red", text: "Arteri Primer" },
+                        { type: "line", color: "magenta", text: "Arteri Primer" },
                         { type: "line", color: "pink", text: "Kolektor Primer" },
-                        { type: "line", color: "magenta", text: "Jalan Tol" },
-                        { type: "line", color: "yellow", text: "Rel Kereta Api" }
+                        { type: "line", color: "red", text: "Jalan Tol" }
+                      ],        
+            },
+            {
+              title: "Jaringan Kereta Eksisting",
+              layer: L.geoJson(rel_eksisting, {
+                style: function (feature) {
+                  return {
+                    color: "Black", // You can change the color as needed
+                    weight: 2, // Adjust the line weight as needed
+                    dashArray: '20, 10', dashOffset: '0'
+                  };
+                }, onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Ruas +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
+                    feature.properties.Fungsi +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                    },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "black",dashArray: '20, 10', dashOffset: '0', text: "Rel Kereta Eksisting" },
                       ],
                       
             },
             {
-              title: "Jaringan Rencana",
+              title: "Jaringan Jalan Rencana",
               layer: L.geoJson(rencana, {
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
-                    weight: 2, // Adjust the line weight as needed
+                    weight: 1, // Adjust the line weight as needed
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
@@ -352,8 +398,47 @@
               opacityslider: false,
               legend: [
                       
-                        { type: "line", color: "magenta", text: "Jalan Tol" },
-                        { type: "line", color: "yellow", text: "Rel Kereta Api" }
+                        { type: "line", color: "red", text: "Jalan Tol" },
+                      ],
+            },
+            {
+              title: "Jaringan Kereta Rencana",
+              layer: L.geoJson(rel_rencana, {
+                style: function (feature) {
+                  return {
+                    color: "Black", // You can change the color as needed
+                    weight: 1, // Adjust the line weight as needed
+                    dashArray: '10, 5', dashOffset: '0'
+                  };
+                }, onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Ruas +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
+                    feature.properties.Fungsi +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                    },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }),
+              opacityslider: false,
+              legend: [
+                        { type: "line", color: "black", dashArray: '20, 10', dashOffset: '0', text: "Rel Kereta Rencana" },
                       ],
             },
             {
@@ -362,9 +447,26 @@
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
-                    weight: 1, // Adjust the line weight as needed
+                    weight: 2, // Adjust the line weight as needed
                   };
-                },
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                    '<div class="judul-popup">' +
+                    feature.properties.Nama_Ruas +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Status Jalan  : " +
+                    feature.properties.Status +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                    },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
@@ -382,8 +484,8 @@
           title: "Infrastruktur Transportasi",
           layers: [
           {
-              title: "Simpul Transportasi Eksisting",
-              layer: L.geoJson(simpul_eks, {
+              title: "Bandara Eksisting",
+              layer: L.geoJson(bandara_eks, {
                 pointToLayer: function (feature, latlng) {
                   var iconColor = feature.properties.Fungsi;
 
@@ -397,7 +499,7 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
+                  '<div class="judul-popup">' +
                     feature.properties.Nama_Objek +
                     "</div>" +
                     '<div class="image-popup">' +
@@ -405,38 +507,80 @@
                     feature.properties.idi +
                     '.jpg" alt="" style="width: 100%; height: auto;" />' +
                     "</div>" +
-                    '<div class="desk-popup">' +
+                    '<div class="desk-popup">' + "Fungsi  : " +
                     feature.properties.Fungsi +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
                     "</div>";
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 15,
                 zIndex: 100,
+
               }),
+              opacityslider: false,
               legend: [
                 { type: "image", url: "/icon/Bandar Udara Khusus.png", text: "Bandar Udara Khusus" },
                 { type: "image", url: "/icon/Bandar Udara Pengumpan.png", text: "Bandar Udara Pengumpan" },
-                { type: "image", url: "/icon/Bandar Udara Pengumpul.png", text: "Bandar Udara Pengumpul" },
-                { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
-                { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
-                { type: "image", url: "/icon/Pelabuhan Penyeberangan.png", text: "Pelabuhan Penyeberangan" },
-                { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" },
-                { type: "image", url: "/icon/Pangkalan Pendaratan Ikan.png", text: "Pangkalan Pendaratan Ikan" },
-                { type: "image", url: "/icon/Pelabuhan Perikanan Pantai.png", text: "Pelabuhan Perikanan Pantai" },
-                { type: "image", url: "/icon/Pelabuhan Perikanan Nusantara.png", text: "Pelabuhan Perikanan Nusantara" },
-                { type: "image", url: "/icon/Terminal Barang.png", text: "Terminal Barang" },
-                { type: "image", url: "/icon/Terminal Khusus.png", text: "Terminal Khusus" },
-                { type: "image", url: "/icon/Terminal Umum.png", text: "Terminal Umum" },
-                { type: "image", url: "/icon/Terminal Penumpang Tipe A.png", text: "Terminal Penumpang Tipe A" },
-                { type: "image", url: "/icon/Terminal Penumpang Tipe B.png", text: "Terminal Penumpang Tipe B" },
-                { type: "image", url: "/icon/Stasiun Kereta Api", text: "Stasiun Kereta Api" },
-                { type: "image", url: "/icon/Jembatan Timbang.png", text: "Jembatan Timbang" },
+                { type: "image", url: "/icon/Bandar Udara Pengumpul.png", text: "Bandar Udara Pengumpul" }
               ],
             },
             {
-              title: "Simpul Transportasi Rencana",
-              layer: L.geoJson(simpul_ren, {
+              title: "Pelabuhan Eksisting",
+              layer: L.geoJson(pelabuhan_eks, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = feature.properties.Fungsi;
+
+                  var smallIcon = L.icon({
+                    iconSize: [20, 20],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                  '<div class="judul-popup">' +
+                    feature.properties.Nama_Objek +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi  : " +
+                    feature.properties.Fungsi +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+
+              }),
+              opacityslider: false,
+              legend: [
+              { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
+              { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
+              { type: "image", url: "/icon/Pelabuhan Penyeberangan.png", text: "Pelabuhan Penyeberangan" },
+                 { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" }
+              ],
+            },
+            {
+              title: "Pelabuhan Rencana",
+              layer: L.geoJson(pelabuhan_ren, {
                 pointToLayer: function (feature, latlng) {
                   var iconColor = feature.properties.Fungsi;
 
@@ -458,8 +602,108 @@
                     feature.properties.idi +
                     '.jpg" alt="" style="width: 100%; height: auto;" />' +
                     "</div>" +
-                    '<div class="desk-popup">' +
+                    '<div class="desk-popup">' + "Fungsi  : " +
                     feature.properties.Fungsi +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+
+              }),
+              opacityslider: false,
+              legend: [
+              { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
+              { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
+              { type: "image", url: "/icon/Pelabuhan Penyeberangan.png", text: "Pelabuhan Penyeberangan" },
+                 { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" }
+              ],
+            },
+            {
+              title: "Terminal Penumpang Eksisting",
+              layer: L.geoJson(terminal_eks, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = feature.properties.Fungsi;
+
+                  var smallIcon = L.icon({
+                    iconSize: [20, 20],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                  '<div class="judul-popup">' +
+                    feature.properties.Nama_Objek +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi  : " +
+                    feature.properties.Fungsi +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
+                    "</div>";
+                  layer.bindPopup(popupContent);
+                },
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 15,
+                zIndex: 100,
+
+              }),
+              opacityslider: false,
+              legend: [
+              { type: "image", url: "/icon/Terminal Penumpang Tipe A.png", text: "Terminal Penumpang Tipe A" },
+              { type: "image", url: "/icon/Terminal Penumpang Tipe B.png", text: "Terminal Penumpang Tipe B" }
+              ],
+            },
+            {
+              title: "Stasiun Kereta Api Eksisting",
+              layer: L.geoJson(stasiun_eks, {
+                pointToLayer: function (feature, latlng) {
+                  var iconColor = feature.properties.Fungsi;
+
+                  var smallIcon = L.icon({
+                    iconSize: [20, 20],
+                    iconAnchor: [13, 27],
+                    popupAnchor: [1, -24],
+                    iconUrl: "icon/" + iconColor + ".png",
+                  });
+                  return L.marker(latlng, { icon: smallIcon });
+                },
+                onEachFeature: function (feature, layer) {
+                  var popupContent =
+                  '<div class="judul-popup">' +
+                    feature.properties.Nama_Objek +
+                    "</div>" +
+                    '<div class="image-popup">' +
+                    '<img src="image_survey/' +
+                    feature.properties.idi +
+                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
+                    "</div>" +
+                    '<div class="desk-popup">' + "Fungsi  : " +
+                    feature.properties.Fungsi +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Keterangan  : " +
+                    feature.properties.Keterangan +
+                    "</div>"+
+                    '<div class="desk-popup">' + "Sumber  : " +
+                    feature.properties.Sumber +
                     "</div>";
                   layer.bindPopup(popupContent);
                 },
@@ -467,24 +711,9 @@
                 maxZoom: 15,
                 zIndex: 100,
               }),
+              opacityslider: false,
               legend: [
-              { type: "image", url: "/icon/Bandar Udara Khusus.png", text: "Bandar Udara Khusus" },
-                { type: "image", url: "/icon/Bandar Udara Pengumpan.png", text: "Bandar Udara Pengumpan" },
-                { type: "image", url: "/icon/Bandar Udara Pengumpul.png", text: "Bandar Udara Pengumpul" },
-                { type: "image", url: "/icon/Pelabuhan Pengumpan.png", text: "Pelabuhan Pengumpan" },
-                { type: "image", url: "/icon/Pelabuhan Pengumpul.png", text: "Pelabuhan Pengumpul" },
-                { type: "image", url: "/icon/Pelabuhan Penyeberangan.png", text: "Pelabuhan Penyeberangan" },
-                { type: "image", url: "/icon/Pelabuhan Utama.png", text: "Pelabuhan Utama" },
-                { type: "image", url: "/icon/Pangkalan Pendaratan Ikan.png", text: "Pangkalan Pendaratan Ikan" },
-                { type: "image", url: "/icon/Pelabuhan Perikanan Pantai.png", text: "Pelabuhan Perikanan Pantai" },
-                { type: "image", url: "/icon/Pelabuhan Perikanan Nusantara.png", text: "Pelabuhan Perikanan Nusantara" },
-                { type: "image", url: "/icon/Terminal Barang.png", text: "Terminal Barang" },
-                { type: "image", url: "/icon/Terminal Khusus.png", text: "Terminal Khusus" },
-                { type: "image", url: "/icon/Terminal Umum.png", text: "Terminal Umum" },
-                { type: "image", url: "/icon/Terminal Penumpang Tipe A.png", text: "Terminal Penumpang Tipe A" },
-                { type: "image", url: "/icon/Terminal Penumpang Tipe B.png", text: "Terminal Penumpang Tipe B" },
-                { type: "image", url: "/icon/Stasiun Kereta Api", text: "Stasiun Kereta Api" },
-                { type: "image", url: "/icon/Jembatan Timbang.png", text: "Jembatan Timbang" },
+              { type: "image", url: "/icon/Stasiun Kereta Api.png", text: "Stasiun Kereta Api" }
               ],
             },
           ],
