@@ -221,6 +221,13 @@
     <script src="data/infrastruktur/stasiun_eks.js"></script>
     <script src="data/infrastruktur/simpul_ren.js"></script>
     <script src="data/infrastruktur/pelabuhan_ren.js"></script>
+    <script src="data/train/linkline.js"></script>
+    <script src="data/train/indroline.js"></script>
+    <script src="data/train/cityline.js"></script>
+    <script src="data/train/sidoarjoline.js"></script>
+    <script src="data/train/mojokertoline.js"></script>
+    <script src="data/train/lamonganline.js"></script>
+    <script src="data/train/ultimateline.js"></script>
 
     <script>
       // Standard leaflet map setup
@@ -1135,56 +1142,162 @@
           ],
         },
         {
-          title: "Transportasi Berbasis Rel",
+          title: "Surabaya Regional Railway Line",
           layers: [
-            {
-              title: "Surabaya Regional Railway Line",
-              layer: L.geoJson(srrl, {
+          {
+              title: "Sidoarjo - Tarik (Link Line)",
+              layer: L.geoJson(linkline, {
                 style: function (feature) {
                   return {
-                    color: feature.properties.color, // You can change the color as needed
-                    weight: 3.5, // Adjust the line weight as needed
+                    color: "#0024C6", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
                   };
                 },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
                 zIndex: 50,
-              }),
+              }), 
               opacityslider: false,
-              legend: [
-                        { type: "line", color: "blue", text: "Sidoarjo - Tarik (Link Line)" },
-                        { type: "line", color: "magenta", text: "Kandangan - Indro (Indro Branch)" },
-                        { type: "line", color: "green", text: "S. Pasar Turi - S. Gubeng (City Line)" },
-                        { type: "line", color: "red", text: "S. Gubeng - Sidoarjo (Sidoarjo Line)" },
-                        { type: "line", color: "orange", text: "Wonokromo - Mojokerto (Mojokerto Line)" },
-                        { type: "line", color: "cyan", text: "Lamongan - S. Pasar Turi (Lamongan Line)" },
-                        { type: "line", color: "yellow", text: "Waru - Juanda Airport (Ultimate Network)" },
-                      ],
+              legend: [{ type: "line", color: "#0024C6", text: "" }],
             },
             {
-              title: "Mass Rapid Transit",
-              layer: L.geoJson(mrt, {
+              title: "Kandangan - Indro (Indro Branch)",
+              layer: L.geoJson(indroline, {
                 style: function (feature) {
                   return {
-                    color: feature.properties.color, // You can change the color as needed
-                    weight: 1, // Adjust the line weight as needed
+                    color: "#BD00C6", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
                   };
                 },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
                 zIndex: 50,
-              }),
+              }), 
               opacityslider: false,
-              legend: [
-                        { type: "line", color: "red", text: "Line Timur-Barat" },
-                        { type: "line", color: "blue", text: "Line Utara-Selatan" },
-                      ],
+              legend: [{ type: "line", color: "#BD00C6", text: "" }],
+            },
+            {
+              title: "S. Pasar Turi - S. Gubeng (City Line)",
+              layer: L.geoJson(cityline, {
+                style: function (feature) {
+                  return {
+                    color: "#15C600", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }), 
+              opacityslider: false,
+              legend: [{ type: "line", color: "#15C600", text: "" }],
+            },
+            {
+              title: "S. Gubeng - Sidoarjo (Sidoarjo Line)",
+              layer: L.geoJson(sidoarjoline, {
+                style: function (feature) {
+                  return {
+                    color: "#C60000", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }), 
+              opacityslider: false,
+              legend: [{ type: "line", color: "#C60000", text: "" }],
+            },
+            {
+              title: "Wonokromo - Mojokerto (Mojokerto Line)",
+              layer: L.geoJson(mojokertoline, {
+                style: function (feature) {
+                  return {
+                    color: "#C68700", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }), 
+              opacityslider: false,
+              legend: [{ type: "line", color: "#C68700", text: "" }],
+            },
+            {
+              title: "Lamongan - S. Pasar Turi (Lamongan Line)",
+              layer: L.geoJson(lamonganline, {
+                style: function (feature) {
+                  return {
+                    color: "#00C6BA", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }), 
+              opacityslider: false,
+              legend: [{ type: "line", color: "#00C6BA", text: "" }],
+            },
+            {
+              title: "Waru - Juanda Airport (Ultimate Network)",
+              layer: L.geoJson(ultimateline, {
+                style: function (feature) {
+                  return {
+                    color: "#C6AE00", // You can change the color as needed
+                    weight: 3, // Adjust the line weight as needed
+                    dashArray: "5, 5"
+                  };
+                },
+                
+                attribution: "Dishub Jatim, 2024",
+                maxZoom: 25,
+                zIndex: 50,
+              }), 
+              opacityslider: false,
+              legend: [{ type: "line", color: "#C6AE00", text: "" }],
             },
           ],
         },
-        
+        {
+          title: "Mass Rapid Transit (MRT)",
+          layers: [
+          {
+            title: "MRT Surabaya",
+            layer: L.geoJson(mrt, {
+              style: function (feature) {
+                return {
+                  color: feature.properties.color, // You can change the color as needed
+                  weight: 3, // Adjust the line weight as needed
+                  dashArray: "10, 10"
+                };
+              },
+              
+              attribution: "Dishub Jatim, 2024",
+              maxZoom: 25,
+              zIndex: 50,
+            }),
+            opacityslider: false,
+            legend: [
+                      { type: "line", color: "red", text: "Line Timur-Barat" },
+                      { type: "line", color: "blue", text: "Line Utara-Selatan" },
+                    ],
+          },
+        ]
+        }
       ];
 
       // Add the scale control to the map
