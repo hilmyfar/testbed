@@ -296,26 +296,16 @@
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Ruas +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
-                    feature.properties.Fungsi +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Ruas + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
-                    },
-                
+                },      
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
                 zIndex: 50,
@@ -338,23 +328,14 @@
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Ruas +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
-                    feature.properties.Fungsi +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Ruas + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                     },
                 
@@ -378,23 +359,14 @@
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Ruas +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
-                    feature.properties.Fungsi +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Ruas + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                     },
                 
@@ -419,23 +391,14 @@
                   };
                 }, onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Ruas +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi Jalan  : " +
-                    feature.properties.Fungsi +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Ruas + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                     },
                 
@@ -458,20 +421,13 @@
                   };
                 },  onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Ruas +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Status Jalan  : " +
-                    feature.properties.Status +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Ruas + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Status Jalan</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                     },
                 
@@ -506,23 +462,14 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                  '<div class="judul-popup">' +
-                    feature.properties.Nama_Objek +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi  : " +
-                    feature.properties.Fungsi +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -553,23 +500,14 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                  '<div class="judul-popup">' +
-                    feature.properties.Nama_Objek +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi  : " +
-                    feature.properties.Fungsi +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -600,24 +538,15 @@
                   return L.marker(latlng, { icon: smallIcon });
                 },
                 onEachFeature: function (feature, layer) {
-                  var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Objek +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi  : " +
-                    feature.properties.Fungsi +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                 var popupContent =
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -649,23 +578,14 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                  '<div class="judul-popup">' +
-                    feature.properties.Nama_Objek +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi  : " +
-                    feature.properties.Fungsi +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -695,23 +615,14 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                  '<div class="judul-popup">' +
-                    feature.properties.Nama_Objek +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' + "Fungsi  : " +
-                    feature.properties.Fungsi +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Keterangan  : " +
-                    feature.properties.Keterangan +
-                    "</div>"+
-                    '<div class="desk-popup">' + "Sumber  : " +
-                    feature.properties.Sumber +
-                    "</div>";
+                    '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Fungsi</td><td style="border: 1px solid #ccc;">' + feature.properties.Fungsi + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Keterangan</td><td style="border: 1px solid #ccc;">' + feature.properties.Keterangan + '</td></tr>' +
+                        '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                      '</table>' +
+                    '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -736,7 +647,23 @@
                     color: "red", // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
-                },
+                  }, onEachFeature: function (feature, layer) {
+                    var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                    layer.bindPopup(popupContent);
+                  },
                 
                 attribution: "Dishub Jatim, 2024",
                 maxZoom: 25,
@@ -753,6 +680,22 @@
                     color: "yellow", // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -770,6 +713,22 @@
                     color: "green", // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
+                }, onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -787,6 +746,22 @@
                     color: "blue", // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -804,6 +779,22 @@
                     color: "purple", // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -835,17 +826,19 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' +
-                    feature.properties.Desc_ +
-                    "</div>";
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -873,17 +866,19 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' +
-                    feature.properties.Desc_ +
-                    "</div>";
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -911,17 +906,19 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' +
-                    feature.properties.Desc_ +
-                    "</div>";
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -949,20 +946,19 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Halte +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' +
-                    feature.properties.Nama_Jalan +
-                    "</div>"+
-                    '<div class="desk-popup">' +
-                    feature.properties.Keterangan +
-                    "</div>";
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -995,17 +991,19 @@
                 },
                 onEachFeature: function (feature, layer) {
                   var popupContent =
-                    '<div class="judul-popup">' +
-                    feature.properties.Nama_Halte +
-                    "</div>" +
-                    '<div class="image-popup">' +
-                    '<img src="image_survey/' +
-                    feature.properties.idi +
-                    '.jpg" alt="" style="width: 100%; height: auto;" />' +
-                    "</div>" +
-                    '<div class="desk-popup">' +
-                    feature.properties.RUTE +
-                    "</div>";
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
                   layer.bindPopup(popupContent);
                 },
                 attribution: "Dishub Jatim, 2024",
@@ -1025,6 +1023,22 @@
                     color: "red", // You can change the color as needed
                     weight: 2, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1042,6 +1056,22 @@
                     color: "yellow", // You can change the color as needed
                     weight: 2, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1059,6 +1089,22 @@
                     color: "green", // You can change the color as needed
                     weight: 2, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1069,30 +1115,29 @@
               legend: [{ type: "line", color: "green", text: "" }],
             },
             {
-              title: "SB R7/R8 TIJ Joyoboyo-PTC Lenmark",
-              layer: L.geoJson(Lin4, {
-                style: function (feature) {
-                  return {
-                    color: "blue", // You can change the color as needed
-                    weight: 2, // Adjust the line weight as needed
-                  };
-                },
-                
-                attribution: "Dishub Jatim, 2024",
-                maxZoom: 25,
-                zIndex: 50,
-              }),
-              opacityslider: false,
-              legend: [{ type: "line", color: "blue", text: "" }],
-            },
-            {
               title: "Feeder Wira-Wiri",
               layer: L.geoJson(feeder, {
                 style: function (feature) {
                   return {
-                    color: "orange", // You can change the color as needed
+                    color: feature.properties.color, // You can change the color as needed
                     weight: 1, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1100,7 +1145,15 @@
                 zIndex: 50,
               }),
               opacityslider: false,
-              legend: [{ type: "line", color: "orange", text: "" }],
+              legend: [
+                { type: "line", color: "#DC143C", text: "FD01" },
+                { type: "line", color: "#B22222", text: "FD02" },
+                { type: "line", color: "#FF4500", text: "FD03" },
+                { type: "line", color: "#8B0000", text: "FD05" },
+                { type: "line", color: "#A52A2A", text: "FD06" },
+                { type: "line", color: "#FF6347", text: "FD07" },
+                { type: "line", color: "#FFA500", text: "FD08" },
+              ],
             },
             {
               title: "Bus Kota Damri",
@@ -1110,6 +1163,22 @@
                     color: "purple", // You can change the color as needed
                     weight: 1, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1120,13 +1189,29 @@
               legend: [{ type: "line", color: "purple", text: "" }],
             },
             {
-              title: "Rencana BRT Greater Surabaya",
+              title: "Rencana BRT Greater Surabaya (GIZ INDOBUS)",
               layer: L.geoJson(brt, {
                 style: function (feature) {
                   return {
                     color: feature.properties.color, // You can change the color as needed
                     weight: 3, // Adjust the line weight as needed
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1153,6 +1238,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1171,6 +1272,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1189,6 +1306,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1207,6 +1340,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1225,6 +1374,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1243,6 +1408,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1261,6 +1442,22 @@
                     weight: 3, // Adjust the line weight as needed
                     dashArray: "5, 5"
                   };
+                },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
                 },
                 
                 attribution: "Dishub Jatim, 2024",
@@ -1284,7 +1481,23 @@
                   weight: 3, // Adjust the line weight as needed
                   dashArray: "10, 10"
                 };
-              },
+              },  onEachFeature: function (feature, layer) {
+                  var popupContent =
+                      '<div class="popup-table">' +
+                        '<table style="border-collapse: collapse;">' +
+                          '<tr><th colspan="2";">' + feature.properties.Nama_Objek + '</th></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Rute</td><td style="border: 1px solid #ccc;">' + feature.properties.Jalur_Rute + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Status</td><td style="border: 1px solid #ccc;">' + feature.properties.Status + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dasar Rencana</td><td style="border: 1px solid #ccc;">' + feature.properties.Dsar_Rncna + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Dok. Teknis</td><td style="border: 1px solid #ccc;">' + feature.properties.Dok_Teknis + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber Dana</td><td style="border: 1px solid #ccc;">' + feature.properties.Smber_Dana + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">OPD PJ</td><td style="border: 1px solid #ccc;">' + feature.properties.OPD_PJ + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Operator</td><td style="border: 1px solid #ccc;">' + feature.properties.Operator + '</td></tr>' +
+                          '<tr><td style="border: 1px solid #ccc;">Sumber</td><td style="border: 1px solid #ccc;">' + feature.properties.Sumber + '</td></tr>' +
+                        '</table>' +
+                      '</div>';
+                  layer.bindPopup(popupContent);
+                },
               
               attribution: "Dishub Jatim, 2024",
               maxZoom: 25,
